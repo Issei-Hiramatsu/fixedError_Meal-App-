@@ -30,7 +30,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     if (!_loadedInitData) {
       final routeArgs =
           ModalRoute.of(context)!.settings.arguments as Map<String, String>;
-      categoryTitle = routeArgs['title'];
+      categoryTitle = routeArgs['title'] as String;
       final categoryId = routeArgs['id'];
       displayedMeals = widget.availableMeals.where((meal) {
         return meal.categories.contains(categoryId);
